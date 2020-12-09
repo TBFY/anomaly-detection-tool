@@ -1,0 +1,41 @@
+
+:::::: [OS INDEPENDENT]
+:::::: [OS INDEPENDENT]
+
+Create directories:
+
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicSpending
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicSpending/jenks
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicSpending/local_extremes
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicSpending/period_margin
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicSpending/std_deviation
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicSpending/time_periods
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders/distributions
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders/distributions/budgetAssessment
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders/distributions/offersNum
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders/dTree
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders/kMeans
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders/ratios
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders/ratios/budgetAssessment
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders/ratios/revenuePerEmployee
+mkdir ROOT-DIR/tbfy/tbfy.analysis/data/data_results/publicTenders/relations_bb
+
+
+:::::: [UNIX]
+:::::: [UNIX]
+
+Link data directory to analysis dir (UNIX version):
+
+ln -s ROOT-DIR/tbfy/tbfy.data/data ROOT-DIR/tbfy/tbfy.analysis/data/data_source
+
+
+:::::: [Windows]
+:::::: [Windows]
+
+Link data directory to analysis dir (Windows version):
+
+mklink /D C:\ROOT-DIR\tbfy\tbfy.analysis\data\data_source C:\ROOT-DIR\tbfy\tbfy.data\data
+

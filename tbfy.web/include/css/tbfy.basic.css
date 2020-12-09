@@ -1,0 +1,198 @@
+/* this css file defines basic css page features including: */
+/* - html tags and objects */
+/* - widely used css classes that do not base on specific page */
+
+/* css of html tags and objects */
+/* css of html tags and objects */
+
+body {
+	font-family: 'Rubik', sans-serif;
+	font-size:15px;
+	line-height:1.4em;
+	color:#0d5296;
+	padding:0;
+	margin:0;
+	/*background:#ffffff url(../../images/bg_telo.gif) top left repeat-y;*/
+}
+
+table {
+	width:100%;
+	margin:0;
+	padding:0;
+	font-size:14px;
+	line-height:1.4em;
+}
+
+font {
+	font-size:14px;
+	line-height:1.4em;
+}
+
+table tr, table td {
+	margin:0;
+	padding:0;
+}
+
+ul {
+	margin:0;
+	padding:0px 0px 0px 20px;
+	list-style:square;
+}
+
+ol {
+	margin:0;
+	padding:0px 0px 0px 20px;
+}
+
+ul li, ol li, dl, dl dt, dl dd {
+	margin:0;
+	padding:0;
+}
+
+form {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+input {
+	margin:0;
+	padding:8px 12px;
+	border:1px solid #0d5296;
+	line-height:inherit;
+	font-family:inherit;
+	font-size:inherit;
+	color:inherit;
+}
+
+select {
+	margin:0;
+	padding:4px;
+	border:1px solid #0d5296;
+	line-height:inherit;
+	font-family:inherit;
+	font-size:inherit;
+	width:100%;
+	color:inherit;
+}
+
+textarea {
+	border:1px solid #0d5296;
+	font-family:inherit;
+	font-size:inherit;
+	line-height:inherit;
+	color:inherit;
+	padding:8px 12px;
+}
+
+a:link, a:active, a:visited {
+	color:#0d5296;
+	text-decoration:underline;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+img {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+p {
+	padding:0;
+	margin:0;
+}
+
+iframe {
+	padding:0;
+	margin:0;
+}
+
+/* general css classes */
+/* general css classes */
+
+.float_left {
+	float:left;
+}
+
+.float_right {
+	float:right;
+}
+
+.clear {
+	clear:both;
+}
+
+.visina5 {
+	height:5px;
+	line-height:5px;
+}
+
+a:link.link_nepodcrtan, a:active.link_nepodcrtan, a:visited.link_nepodcrtan {
+	text-decoration:none;
+}
+a:hover.link_nepodcrtan {
+	text-decoration:underline;
+}
+
+.text_80 {
+	font-size:0.8em;
+	line-height:1.4em;
+}
+
+.text_90 {
+	font-size:0.9em;
+	line-height:1.4em;
+}
+
+.text_110 {
+	font-size:1.1em;
+	line-height:1.4em;
+}
+
+.text_120 {
+	font-size:1.2em;
+	line-height:1.4em;
+}
+
+.text_130 {
+	font-size:1.3em;
+	line-height:1.4em;
+}
+
+.text_140 {
+	font-size:1.4em;
+	line-height:1.4em;
+}
+
+.text_150 {
+	font-size:1.5em;
+	line-height:1.4em;
+}
+
+.text_160 {
+	font-size:1.6em;
+	line-height:1.4em;
+}
+
+.text_170 {
+	font-size:1.7em;
+	line-height:1.4em;
+}
+
+.text_180 {
+	font-size:1.8em;
+	line-height:1.4em;
+}
+
+.text_190 {
+	font-size:1.9em;
+	line-height:1.4em;
+}
+
+.text_200 {
+	font-size:2.0em;
+	line-height:1.4em;
+}

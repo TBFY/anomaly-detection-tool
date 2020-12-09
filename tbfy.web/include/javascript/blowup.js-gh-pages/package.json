@@ -1,0 +1,29 @@
+{
+  "name": "blowup",
+  "version": "1.0.1",
+  "description": "A jQuery plugin for customizable image magnification.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulkr/blowup.js.git"
+  },
+  "keywords": [
+    "magnify",
+    "magnification",
+    "zoom"
+  ],
+  "author": {
+    "email": "paul@paulkr.com",
+    "name": "Paul Krishnamurthy",
+    "url": "http://paulkr.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulkr/blowup.js/issues"
+  }
+}

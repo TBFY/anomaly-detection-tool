@@ -1,0 +1,33 @@
+
+:::::: [OS INDEPENDENT]
+:::::: [OS INDEPENDENT]
+
+Create directories:
+
+mkdir ROOT-DIR/tbfy/tbfy.data/data
+mkdir ROOT-DIR/tbfy/tbfy.data/data/erarFeatureVectors
+mkdir ROOT-DIR/tbfy/tbfy.data/data/erarFeatureVectors/daily
+mkdir ROOT-DIR/tbfy/tbfy.data/data/OCDSdata
+mkdir ROOT-DIR/tbfy/tbfy.data/data/rawData
+mkdir ROOT-DIR/tbfy/tbfy.data/data/rawData/spendingRawData
+mkdir ROOT-DIR/tbfy/tbfy.data/data/rawData/spendingRawData/erarRawData
+mkdir ROOT-DIR/tbfy/tbfy.data/data/rawData/tbfyKG
+mkdir ROOT-DIR/tbfy/tbfy.data/data/rawData/tenderRawData
+mkdir ROOT-DIR/tbfy/tbfy.data/data/tbfyKGFV
+mkdir ROOT-DIR/tbfy/tbfy.data/data/tbfyKGFV/daily
+mkdir ROOT-DIR/tbfy/tbfy.data/data/tbfyKGFV/mappings
+mkdir ROOT-DIR/tbfy/tbfy.data/data/tenderFeatureVectors
+mkdir ROOT-DIR/tbfy/tbfy.data/data/tenderFeatureVectors/mappings
+mkdir ROOT-DIR/tbfy/tbfy.data/data/tenderFeatureVectors/fullFeatureVectors
+mkdir ROOT-DIR/tbfy/tbfy.data/data/tenderFeatureVectors/fullFeatureVectors/daily
+mkdir ROOT-DIR/tbfy/tbfy.data/data/tenderFeatureVectors/SSFeatureVectors
+mkdir ROOT-DIR/tbfy/tbfy.data/data/tenderFeatureVectors/SSFeatureVectors/daily
+
+
+:::::: [PYTHON]
+:::::: [PYTHON]
+
+pycurl library needs to be installed with openssl:
+
+	pip uninstall pycurl
+	pip install --compile --install-option="--with-openssl" pycurl

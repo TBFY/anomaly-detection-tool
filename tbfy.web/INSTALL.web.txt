@@ -1,0 +1,30 @@
+
+:::::: [OS INDEPENDENT]
+:::::: [OS INDEPENDENT]
+
+Create directories:
+
+mkdir ROOT-DIR/tbfy/tbfy.web/public
+mkdir ROOT-DIR/tbfy/tbfy.web/public/ocds
+
+
+:::::: [OSx]
+:::::: [OSx]
+
+Connect web app to data sources (UNIX version):
+
+ln -s  ROOT-DIR/tbfy/tbfy.data/data/OCDSdata ROOT-DIR/tbfy/tbfy.web/public/ocds/mju
+ln -s  ROOT-DIR/tbfy/tbfy.analysis/data/data_results ROOT-DIR/tbfy/tbfy.web/data_results
+ln -s  ROOT-DIR/tbfy/tbfy.data/data ROOT-DIR/tbfy/tbfy.analysis/data/data_source
+
+
+:::::: [Windows]
+:::::: [Windows]
+
+Connect web app to data sources (Windows version):
+
+mklink /D ROOT-DIR\tbfy\tbfy.web\public\ocds\mju ROOT-DIR\tbfy\tbfy.data\data\OCDSdata
+mklink /D ROOT-DIR\tbfy\tbfy.web\data_results ROOT-DIR\tbfy\tbfy.analysis\data\data_results
+mklink /D ROOT-DIR\tbfy\tbfy.analysis\data\data_source ROOT-DIR\tbfy\tbfy.data\data
+
+

@@ -1,0 +1,42 @@
+/*  css belonging to chart-scripts/histogram.js */
+
+svg {
+    -webkit-filter: drop-shadow( 0px 3px 3px rgba(0,0,0,.3) );
+    filter: drop-shadow( 0px 3px 3px rgba(0,0,0,.25) );
+}
+
+/* style of a line connecting the points: adjusting the fill and stroke */
+
+path.path_line {
+    fill: none;
+    stroke: #0D5296;
+    stroke-width:0;
+}
+
+/* style the dots by assigning a fill and stroke */
+
+.dot {
+    fill:#0D5296;
+    stroke:#0D5296; /* border around dot */
+    stroke-width:0;
+    -webkit-filter: drop-shadow( 0px 3px 3px rgba(0,0,0,.3) );
+    filter: drop-shadow( 0px 3px 3px rgba(0,0,0,.25) );
+}
+.dot:hover {
+    fill:#FACB00;
+    stroke:#FACB00;
+    stroke-width:5;
+    -webkit-filter: drop-shadow( 0px 4px 4px rgba(0,0,0,.6) );
+    filter: drop-shadow( 0px 4px 4px rgba(0,0,0,.5) );
+}
+
+.metaDataContainer {}
+
+/*
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+*/
+
+

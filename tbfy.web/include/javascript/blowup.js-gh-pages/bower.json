@@ -1,0 +1,16 @@
+{
+  "name": "blowup",
+  "authors": [
+    "Paul Krishnamurthy <paul@paulkr.com>"
+  ],
+  "description": "A jQuery plugin for customizable image magnification.",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "magnify",
+    "magnification",
+    "zoom"
+  ],
+  "license": "MIT",
+  "homepage": "http://paulkr.github.io/blowup.js/"
+}

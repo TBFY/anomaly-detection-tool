@@ -1,0 +1,38 @@
+
+About this INSTALL
+==
+
+TBFY project has several INSTALL instructions located in:
+
+(-) tbfy.data/INSTALL.data.txt
+(-) tbfy.analysis/INSTALL.analysis.txt
+(-) tbfy.web/INSTALL.web.txt
+
+This INSTALL instructions focuses to a python interpreter.
+
+TBFY project is expected to have one (local) python 3.7 interpreter with libraries:
+
+(.) mako
+(.) psycopg2-binary
+(.) matplotlib
+(.) pandas
+(.) sklearn
+(.) sklearn-json
+(.) scikit-learn
+(.) IPython
+(.) pydotplus
+(.) GraphViz
+(.) jenkspy
+(.) requests
+
+
+Note
+===
+
+Python's graphwiz library does not come with the actual executable. Which is why one needs to install it on its own:
+
+1. install graphviz (https://graphviz.org/download/)
+2. update global path to graphwiz executable
+
+
+
