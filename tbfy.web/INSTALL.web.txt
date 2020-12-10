@@ -28,3 +28,11 @@ mklink /D ROOT-DIR\tbfy\tbfy.web\data_results ROOT-DIR\tbfy\tbfy.analysis\data\d
 mklink /D ROOT-DIR\tbfy\tbfy.analysis\data\data_source ROOT-DIR\tbfy\tbfy.data\data
 
 
+:::::: [Additional config]
+:::::: [Additional config]
+
+Two files need additional attention:
+- tbfy.web/index.py
+- tbfy.web/ajaxScript.py
+To allow webserver to properly execute scripts, the first line in both files needs to be corrected to point to the (local) python executable.
+

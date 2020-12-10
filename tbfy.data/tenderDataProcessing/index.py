@@ -19,13 +19,13 @@ sharedMethods = Shared.SharedDataMethods(conf)
 # for testing purposes to turn on/off specific tasks
 # for testing purposes to turn on/off specific tasks
 
-dateString        = '20200611'
-dateStringKG      = '2019-01-03'
-testModeON        = False
-exe_task_download = True
-exe_task_mju2ocds = True
-exe_task_mju2fv   = True
-exe_task_kg2fv    = True
+dateString              = '20200611'
+dateStringKG            = '2019-01-03'
+testModeON              = False
+exe_task_mju_download   = True
+exe_task_mju2ocds       = True
+exe_task_mju2fv         = True
+exe_task_kg2fv          = True
 
 
 # ************************************************************* #
@@ -35,7 +35,7 @@ exe_task_kg2fv    = True
 # ************************************************************* #
 # ************************************************************* #
 
-if exe_task_download:
+if exe_task_mju_download:
     print('MJU Data transfer to IJS script start')
     print('')
 
