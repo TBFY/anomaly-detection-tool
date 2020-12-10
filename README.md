@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-Apache2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
-# INTRODUCTION
+# Basic Overview
 
 Code, available here, is the TBFY anomaly detection tool, powering http://tbfy.ijs.si/ The TBFY anomaly detection tool is part of the TBFY platform, described in more detail here: https://theybuyforyou.eu/ The goal of the TBFY anomaly detection tool is to identify anomalies within the public procurement processes.
 
@@ -18,7 +18,7 @@ Each of the layers is processed independently from other layers, which means tha
 - and then runs a web application, tbfy.web, where results are presented in human readable format.
 
 
-# ANOMALY DETECTION TOOL ARCHITECTURE
+# Anomaly detection architecture
 
 This chapter describes the three anomaly detecion layers in more detail.
 
@@ -101,7 +101,7 @@ The HTML is created first by being:
 - and, with the help of mako template library, joined with a selected template in tbfy.web/templates.
 
 
-# TECHNICAL SPECIFICATIONS
+# Technical specifications
 
 All of the three layers of the TBFY anomaly detection tool is run by a python 3.7 interpreter. Python requires additional libraries to be installed:
 
@@ -119,7 +119,7 @@ All of the three layers of the TBFY anomaly detection tool is run by a python 3.
 - requests 2.24.0
 
 
-# INSTALLATION SPECIFICATIONS
+# Installation specifications
 
 Every of the three layers have an associated config file, that needs to be adapted to a local environment:
 - tbfy.data/config_data.py
@@ -132,7 +132,7 @@ Every of the three layers are provided with additional installation instructions
 - tbfy.web/INSTALL.web.txt
 
 
-# EXECUTION SPECIFICATIONS
+# Script execution
 
 Once the installation process is over, it's time for execution.
 
@@ -145,6 +145,11 @@ Data analysis is executed by running:
 - data analysis of tender data: tbfy.analysis/publicTendersAnalysis/index.py
 
 Every index.py, at the beginning of the file, has several switches, enabling or disabling a specific part of the code. For example, due to lack of credentials to connect to MJU server, one can turn off MJU data download by setting exe_task_mju_download to False
+
+
+# Contributing
+
+Please take a look at our [contributing](https://github.com/TBFY/general/blob/master/guides/how-to-contribute.md) guidelines if you're interested in helping!
 
 
 # MISC
