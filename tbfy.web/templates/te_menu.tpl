@@ -55,7 +55,7 @@
 		<br /><br />
 		<div class="tab_section">
 			<div class="container-fluid" style="padding:0;">
-				<a class="tab_common ${'tab_active' if data['query_t'] == 'rev_per_employee' else 'tab_passive'}" href="?m=tenders&amp;a=ratios&amp;t=rev_per_employee">
+				<a class="tab_common ${'tab_active' if data['query_t'] == 'rev_per_employee' else 'tab_passive'}" href="?m=tenders&amp;a=ratios&amp;t=rev_per_employee" style="border-right:none;">
 					Revenue/employee
 				</a>
 				<a class="tab_common ${'tab_active' if data['query_t'] == 'budget_assesment' else 'tab_passive'}" href="?m=tenders&amp;a=ratios&amp;t=budget_assesment">
@@ -75,7 +75,7 @@
 		<br /><br />
 		<div class="tab_section">
 			<div class="container-fluid" style="padding:0;">
-				<a class="tab_common ${'tab_active' if data['query_t'] == 'num_of_offers' else 'tab_passive'}" href="?m=tenders&amp;a=distributions&amp;t=num_of_offers">
+				<a class="tab_common ${'tab_active' if data['query_t'] == 'num_of_offers' else 'tab_passive'}" href="?m=tenders&amp;a=distributions&amp;t=num_of_offers" style="border-right:none;">
 					Offers received
 				</a>
 				<a class="tab_common ${'tab_active' if data['query_t'] == 'budget_assessment' else 'tab_passive'}" href="?m=tenders&amp;a=distributions&amp;t=budget_assessment">
@@ -95,10 +95,10 @@
 		<br /><br />
 		<div class="tab_section">
 			<div class="container-fluid" style="padding:0;">
-				<a class="tab_common ${'tab_active' if data['query_t'] == 'buyer2bidder' else 'tab_passive'}" href="?m=tenders&amp;a=dependencies&amp;t=buyer2bidder">
+				<a class="tab_common ${'tab_active' if data['query_t'] == 'buyer2bidder' else 'tab_passive'}" href="?m=tenders&amp;a=dependencies&amp;t=buyer2bidder" style="border-right:none;">
 					Buyers
 				</a>
-				<a class="tab_common ${'tab_active' if data['query_t'] == 'bidder2buyer' else 'tab_passive'}" href="?m=tenders&amp;a=dependencies&amp;t=bidder2buyer">
+				<a class="tab_common ${'tab_active' if data['query_t'] == 'bidder2buyer' else 'tab_passive'}" href="?m=tenders&amp;a=dependencies&amp;t=bidder2buyer" style="border-right:none;">
 					Bidders
 				</a>
 				<a class="tab_common ${'tab_active' if data['query_t'] == 'mutual' else 'tab_passive'}" href="?m=tenders&amp;a=dependencies&amp;t=mutual">

@@ -428,8 +428,8 @@
 
 	<div class="tab_section">
 		<div class="container-fluid" tyle="padding:0;">
-			<div id="graph_tab" class="tab_common tab_active switch_tab">Graph</div>
-			<div id="negatives_tab" class="tab_common tab_passive switch_tab">Negative devs</div>
+			<div id="graph_tab" class="tab_common tab_active switch_tab" style="border-right:none;">Graph</div>
+			<div id="negatives_tab" class="tab_common tab_passive switch_tab" style="border-right:none;">Negative devs</div>
 			<div id="positives_tab" class="tab_common tab_passive switch_tab">Positive devs</div>
 			<div class="clearfix"></div>
 		</div>

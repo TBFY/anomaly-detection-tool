@@ -91,13 +91,13 @@
 /* tab section */
 
 .tab_section {
-    border-bottom:4px solid #facb00;
+    border-bottom:1px solid #0d5296;
     margin-bottom:20px;
 }
 .tab_common {
     background-color:transparent;
     padding:12px 1.2em 14px 1.2em;
-    border:4px solid #facb00;
+    border:1px solid #0d5296;
     border-bottom:0;
     float:left;
 }
@@ -262,6 +262,143 @@ a.method_menu:hover {
 }
 a.method_menu_active:link, a.method_menu_active:active, a.method_menu_active:visited, a.method_menu_active:hover {
     background-color:#facb00;
+}
+
+
+.btn-moder {
+	font-size:1em;
+	background-color: #0d5296;
+	border-color: #0d5296;
+	color:#fff;
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	border-radius:1px;
+	white-space:nowrap;
+	display:block;
+	padding:5px 15px 5px 15px;
+	text-decoration:none;
+}
+.btn-moder:link,
+.btn-moder:visited {
+	background-color: #0d5296;
+	border-color: #0d5296;
+	color:#fff;
+	text-decoration:none;
+}
+.btn-moder:hover,
+.btn-moder:focus,
+.btn-moder:active,
+.btn-moder.active {
+	background-color: #0d5296;
+	border-color: #0d5296;
+	color:#fff;
+	text-decoration:none;
+}
+.btn-moder.disabled:hover,
+.btn-moder.disabled:focus,
+.btn-moder.disabled:active,
+.btn-moder.disabled.active,
+.btn-moder[disabled]:hover,
+.btn-moder[disabled]:focus,
+.btn-moder[disabled]:active,
+.btn-moder[disabled].active,
+fieldset[disabled] .btn-moder:hover,
+fieldset[disabled] .btn-moder:focus,
+fieldset[disabled] .btn-moder:active,
+fieldset[disabled] .btn-moder.active {
+	background-color: #0d5296;
+	border-color: #0d5296;
+}
+
+
+.btn-bel {
+	font-size:1em;
+	background-color: #fff;
+	border-color: #0d5296;
+	color:#0d5296;
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	border-radius:1px;
+	white-space:nowrap;
+	display:block;
+	padding:5px 15px 5px 15px;
+	text-decoration:none;
+}
+.btn-bel:link,
+.btn-bel:visited {
+	background-color: #0d5296;
+	border-color: #0d5296;
+	color:#fff;
+	text-decoration:none;
+}
+.btn-bel:hover,
+.btn-bel:focus,
+.btn-bel:active,
+.btn-bel.active {
+	background-color: #0d5296;
+	border-color: #0d5296;
+	color:#fff;
+	text-decoration:none;
+}
+.btn-bel.disabled:hover,
+.btn-bel.disabled:focus,
+.btn-bel.disabled:active,
+.btn-bel.disabled.active,
+.btn-bel[disabled]:hover,
+.btn-bel[disabled]:focus,
+.btn-bel[disabled]:active,
+.btn-bel[disabled].active,
+fieldset[disabled] .btn-bel:hover,
+fieldset[disabled] .btn-bel:focus,
+fieldset[disabled] .btn-bel:active,
+fieldset[disabled] .btn-bel.active {
+	background-color: #0d5296;
+	border-color: #0d5296;
+}
+
+.btn-rumen {
+	font-size:1em;
+	background-color: #facb00;
+	border-color: #0d5296;
+	color:#0d5296;
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	border-radius:1px;
+	white-space:nowrap;
+	display:block;
+	padding:5px 15px 5px 15px;
+	text-decoration:none;
+}
+.btn-rumen:link,
+.btn-rumen:visited {
+	background-color: #facb00;
+	border-color: #0d5296;
+	color:#fff;
+	text-decoration:none;
+}
+.btn-rumen:hover,
+.btn-rumen:focus,
+.btn-rumen:active,
+.btn-rumen.active {
+	background-color: #0d5296;
+	border-color: #0d5296;
+	color:#fff;
+	text-decoration:none;
+}
+.btn-rumen.disabled:hover,
+.btn-rumen.disabled:focus,
+.btn-rumen.disabled:active,
+.btn-rumen.disabled.active,
+.btn-rumen[disabled]:hover,
+.btn-rumen[disabled]:focus,
+.btn-rumen[disabled]:active,
+.btn-rumen[disabled].active,
+fieldset[disabled] .btn-rumen:hover,
+fieldset[disabled] .btn-rumen:focus,
+fieldset[disabled] .btn-rumen:active,
+fieldset[disabled] .btn-rumen.active {
+	background-color: #0d5296;
+	border-color: #0d5296;
 }
 
 /* tenders landing */

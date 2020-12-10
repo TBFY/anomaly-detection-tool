@@ -105,7 +105,7 @@
 		function getSelectedTreeData()
 		{
 			var params = []
-			$(".btn-secondary").each(function(index) {
+			$(".btn-moder").each(function(index) {
 				if($(this).hasClass('btn_parameter'))
 				{
 					params.push($(this).attr('id'))
@@ -122,8 +122,8 @@
 		{
 			var id = $(this).attr('id');
 
-			var selectedClass = 'btn-secondary';
-			var unselectedClass = 'btn-outline-secondary';
+			var selectedClass = 'btn-moder';
+			var unselectedClass = 'btn-bel';
 			if($('#' + id).hasClass(unselectedClass))
 			{
 				// btn is selected
@@ -241,10 +241,12 @@
 				</div>
 				<div class="col-sm-9">
 					%for baseKey in data["dTreeParams"]:
-						<span class="span_btn"><button type="button" id="${data["dTreeParams"][baseKey]["dataFieldKey"]}" class="btn btn-outline-secondary btn_parameter">${data["dTreeParams"][baseKey]["humanText"]}</button></span>
+						<span class="span_btn"><button type="button" id="${data["dTreeParams"][baseKey]["dataFieldKey"]}" class="btn btn-bel btn_parameter">${data["dTreeParams"][baseKey]["humanText"]}</button></span>
 					%endfor
 				</div>
 			</div>
+			<div class="visina5">&nbsp;</div>
+			<div class="visina5">&nbsp;</div>
 
 			<div class="row">
 				<div class="col-sm-3">
@@ -259,12 +261,14 @@
 						%endfor
 					</select>
 					<br />
-					<div id="errorBoxMsg" class="text_red" style="display:none;">
-						<br />
+					<div id="errorBoxMsg" class="text_rdec" style="display:none;">
+                        <div class="visina5">&nbsp;</div>
+                        <div class="visina5">&nbsp;</div>
 						Please, select at least two parameters to include into decision tree.
 					</div>
 					<br />
-					<div class="tree-custom-generate btn btn-primary">Go, get my tree!</div>
+
+					<div ype="button" class="tree-custom-generate btn btn-rumen" style="padding:5px 20px;">Go, get my tree!</div>
 				</div>
 			</div>
 		</div>

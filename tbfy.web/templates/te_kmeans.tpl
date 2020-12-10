@@ -123,8 +123,8 @@
 		{
 			var id = $(this).attr('id');
 
-			var selectedClass = 'btn-secondary';
-			var unselectedClass = 'btn-outline-secondary';
+			var selectedClass = 'btn-moder';
+			var unselectedClass = 'btn-bel';
 			if($('#' + id).hasClass(unselectedClass))
 			{
 				// btn is selected
@@ -668,7 +668,7 @@
 
 	<div class="tab_section">
 		<div class="container-fluid">
-			<div id="deviations_tab" class="tab_common tab_active switch_tab">Deviations</div>
+			<div id="deviations_tab" class="tab_common tab_active switch_tab" style="border-right:none;">Deviations</div>
 			<div id="methodology_tab" class="tab_common tab_passive switch_tab">Methodology</div>
 			<div class="clearfix"></div>
 		</div>
@@ -724,7 +724,7 @@
                 <div class="col-sm-9 custom_field custom_r">
                     %for key, value in data["allowedAxisLabelsDict"].items():
 						<span class="span_btn">
-						    <button type="button" id="${key}" class="btn btn-outline-secondary btn_parameter">${value}</button>
+						    <button type="button" id="${key}" class="btn btn-bel btn_parameter">${value}</button>
 						</span>
                     %endfor
                 </div>
@@ -736,7 +736,7 @@
 
                 <div class="col-sm-3 custom_field custom_l">&nbsp;</div>
                 <div class="col-sm-9 custom_field custom_r">
-                    <div class="clusters-custom-generate btn btn-primary">Go, cluster</div>
+                    <div class="clusters-custom-generate btn btn-rumen">Go, cluster</div>
                 </div>
             </div>
         </div>

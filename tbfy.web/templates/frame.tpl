@@ -10,8 +10,8 @@
         <link rel="stylesheet" type="text/css" href="/include/css/bootstrap/bootstrap.min.css"></link>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i&display=swap&subset=latin-ext" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" />
-		<link rel="stylesheet" type="text/css" href="/include/css/tbfy.basic.css?v=1.0"/>
-		<link rel="stylesheet" type="text/css" href="/include/css/tbfy.classes.css?v=1.0"/>
+		<link rel="stylesheet" type="text/css" href="/include/css/tbfy.basic.css?v=3.0"/>
+		<link rel="stylesheet" type="text/css" href="/include/css/tbfy.classes.css?v=3.0"/>
 
 
         <script type="text/javascript" src="/include/javascript/bootstrap/bootstrap.min.js"></script>
