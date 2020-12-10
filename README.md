@@ -100,18 +100,18 @@ The HTML is created first by being:
 
 All of the three layers of the TBFY anomaly detection tool is run by a python 3.7 interpreter. Python requires additional libraries to be installed:
 
-(.) mako 1.1.3
-(.) psycopg2-binary 2.8.6
-(.) matplotlib 3.1.3
-(.) pandas 1.0.1
-(.) sklearn
-(.) sklearn-json 0.1.0
-(.) scikit-learn 0.22.1
-(.) IPython 7.12.0
-(.) pydotplus 2.0.2
-(.) GraphViz 0.13.2
-(.) jenkspy 0.1.5
-(.) requests 2.24.0
+- mako 1.1.3
+- psycopg2-binary 2.8.6
+- matplotlib 3.1.3
+- pandas 1.0.1
+- sklearn
+- sklearn-json 0.1.0
+- scikit-learn 0.22.1
+- IPython 7.12.0
+- pydotplus 2.0.2
+- GraphViz 0.13.2
+- jenkspy 0.1.5
+- requests 2.24.0
 
 
 # INSTALLATION SPECIFICATIONS
@@ -143,7 +143,6 @@ Every index.py, at the beginning of the file, has several switches, enabling or 
 
 
 # MISC
-
 
 ## graphWix installation
 
