@@ -1,3 +1,6 @@
+<p align="center"><img width=50% src="https://github.com/TBFY/general/blob/master/figures/tbfy-logo.png"></p>
+
+
 # INTRODUCTION
 
 Code, available here, is the TBFY anomaly detection tool, powering http://tbfy.ijs.si/ The TBFY anomaly detection tool is part of the TBFY platform, described in more detail here: https://theybuyforyou.eu/ The goal of the TBFY anomaly detection tool is to identify anomalies within the public procurement processes.
