@@ -147,11 +147,6 @@ Data analysis is executed by running:
 Every index.py, at the beginning of the file, has several switches, enabling or disabling a specific part of the code. For example, due to lack of credentials to connect to MJU server, one can turn off MJU data download by setting exe_task_mju_download to False
 
 
-# Contributing
-
-Please take a look at our [contributing](https://github.com/TBFY/general/blob/master/guides/how-to-contribute.md) guidelines if you're interested in helping!
-
-
 # MISC
 
 ## graphWiz installation
@@ -167,8 +162,9 @@ Python's graphwiz library does not come with the actual executable. Which is why
 For security reasons the MJU (Slovenian ministry of public procurement) credentials for a ftp connect to MJU servers are not provided.
 
 
+# Contributing
 
-
+Please take a look at our [contributing](https://github.com/TBFY/general/blob/master/guides/how-to-contribute.md) guidelines if you're interested in helping!
 
 
 
