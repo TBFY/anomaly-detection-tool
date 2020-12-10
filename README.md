@@ -154,7 +154,7 @@ Please take a look at our [contributing](https://github.com/TBFY/general/blob/ma
 
 # MISC
 
-## graphWix installation
+## graphWiz installation
 
 Python's graphwiz library does not come with the actual executable. Which is why one needs to install it on its own:
 
