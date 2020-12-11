@@ -529,6 +529,18 @@ class OrganizationsModel:
                     break;
             issuedTendersChartData['byTenderNum'] = tmp_byTenderNumDictFinal
 
+        if 'ponudnikorganizacijakratko' in companyProfileDict:
+            companyProfileDict['ajpesnaziv'] = companyProfileDict['ponudnikorganizacijakratko'].replace(' ', '_')
+            companyProfileDict['erardavcna'] = companyProfileDict['ponudnikdavcna']
+
+        if 'narocnikorganizacijakratko' in companyProfileDict:
+            companyProfileDict['erardavcna'] = companyProfileDict['narocnikdavcna']
+            if len(companyProfileDict['narocnikorganizacijakratko']) > len(companyProfileDict['narocnikorganizacija']):
+                companyProfileDict['ajpesnaziv'] = companyProfileDict['narocnikorganizacijakratko'].replace(' ', '_')
+            else:
+                companyProfileDict['ajpesnaziv'] = companyProfileDict['narocnikorganizacija'].replace(' ', '_')
+
+
         # END issued tenders data aggregation
         # END issued tenders data aggregation
 
