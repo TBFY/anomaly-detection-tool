@@ -97,12 +97,10 @@
 
 	function drawAllRatioChart()
 	{
-		console.log('all data');
-
 		// reset chart box
 		// reset chart box
 
-		$('#chart-frame').html('');
+		chartDrawStart();
 
 		// create chart
 		// create chart
@@ -203,12 +201,10 @@
 
 	function drawPosDevChart()
 	{
-		console.log('pos dev data');
-
 		// reset chart box
 		// reset chart box
 
-		$('#chart-frame').html('');
+		chartDrawStart();
 
 		// create chart
 		// create chart
@@ -309,12 +305,10 @@
 
 	function drawNegDevChart()
 	{
-		console.log('pos dev data');
-
 		// reset chart box
 		// reset chart box
 
-		$('#chart-frame').html('');
+		chartDrawStart();
 
 		// create chart
 		// create chart
@@ -410,6 +404,27 @@
 	{
 		return '';
 	}
+
+	function chartDrawStart()
+	{
+	    $('#chart-frame').html('');
+	    $('.loading_box').show();
+	    loadUntilChartAvailable();
+	}
+	function loadUntilChartAvailable()
+	{
+	    var chartHTML = $('#chart-frame').html();
+
+	    if(chartHTML.length == 0)
+	    {
+	        setTimeout(function(){ loadUntilChartAvailable(); }, 100);
+	    }
+	    else
+	    {
+	        $('.loading_box').hide();
+	        console.log('hide load');
+	    }
+	}
 </script>
 
 <div id="te_statistical_approach">
@@ -457,6 +472,7 @@
 		</form>
 		<br /><br /><br />
 
+        <div class="text-center loading_box"><img src="/images/loading.gif" /></div>
 		<div id="chart-frame" class="chart-frame"></div>
 		<br />
 		<div id="chart-frame-meta">Select a bar.</div>

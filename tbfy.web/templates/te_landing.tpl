@@ -49,7 +49,7 @@
 		// reset chart box
 		// reset chart box
 
-		$('#chart-frame').html('');
+        chartDrawStart()
 
 		// create chart
 		// create chart
@@ -99,8 +99,27 @@
 				.datum(dataArray) // bind data to the div
 				.call(histogram); // draw chart in div
 		});
+	}
 
-		$('.loading_box').hide();
+	function chartDrawStart()
+	{
+	    $('#chart-frame').html('');
+	    $('.loading_box').show();
+	    loadUntilChartAvailable();
+	}
+	function loadUntilChartAvailable()
+	{
+	    var chartHTML = $('#chart-frame').html();
+
+	    if(chartHTML.length == 0)
+	    {
+	        setTimeout(function(){ loadUntilChartAvailable(); }, 100);
+	    }
+	    else
+	    {
+	        $('.loading_box').hide();
+	        console.log('hide load');
+	    }
 	}
 </script>
 
