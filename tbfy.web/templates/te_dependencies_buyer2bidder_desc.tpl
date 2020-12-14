@@ -1,8 +1,8 @@
 ## -*- coding: utf-8 -*-
 
 <div class="explanation-chart explanation-chart-all">
+    <!--
 	<span style="color:#ff0000;">BUYER 2 BIDDER Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span>
-	<!--
 	<div class="read-more-div read-more-div-all" style="display:none;">
 		<br />
 		ALL Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

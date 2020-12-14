@@ -1,7 +1,7 @@
 ## -*- coding: utf-8 -*-
 
 <div class="explanation-chart explanation-chart-all">
-	<span style="color:#ff0000;">BUDGET ALL Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span>
+	<span>This visualization shows the distribution of estimated value vs. the final value of the lot/tender.</span>
 	<!--
 	<div class="read-more-div read-more-div-all" style="display:none;">
 		<br />
@@ -17,7 +17,7 @@
 	-->
 </div>
 <div class="explanation-chart explanation-chart-pos" style="display:none;">
-	<span style="color:#ff0000;">BUDGET POS Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+	<span>This visualization shows suspiciously close distribution of estimated value vs. the final value of the lot/tender.</span>
 	<!--
 	<div class="read-more-div read-more-div-pos" style="display:none;">
 		<br />
@@ -33,7 +33,7 @@
     -->
 </div>
 <div class="explanation-chart explanation-chart-neg" style="display:none;">
-	<span style="color:#ff0000;">BUDGET NEG Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+	<span>This visualization shows suspiciously large difference between estimated value vs. the final value of the lot/tender. Could indicate sloppy tender preparation or neglect when entering tender information into tender award notice on the public procurement portal.</span>
 	<!--
 	<div class="read-more-div read-more-div-neg" style="display:none;">
 		<br />
