@@ -23,6 +23,15 @@
 	.tender_show_less {
 		display:none;
 	}
+
+	.tender_chart_cell_left {
+	    border-right:2px solid #01488C;
+	}
+	.tender_chart_bar {
+	    background-color:#FACB01;
+	    height:4px line-height:4px;
+	    margin-top:0.1em;
+	}
 </style>
 
 <link rel="stylesheet" type="text/css" href="/include/css/chart-scripts/donutchart.css"/>
@@ -387,7 +396,7 @@
 
             % if len(data['wonTenders']) > 0:
                 <div class="row no-gutters">
-                    <div class="col-5 text-right" style="border-right:2px solid #01488C;">
+                    <div class="col-5 text-right tender_chart_cell_left">
                         <a href="javascript:void(0);" id="tenders_won_value" class="tender_chart_type">Tenders by value</a> &nbsp;
                     </div>
                     <div class="col-7">
@@ -400,12 +409,12 @@
                     %for company_id,companyDict in data["wonTendersChartData"]['byValue'].items():
                         <% curr_share = int(round(float(companyDict['share']) * 100, 0)) %>
                         <div class="row no-gutters">
-                            <div class="col-5" style="border-right:2px solid #01488C;">
+                            <div class="col-5 tender_chart_cell_left">
                                 <div class="text-right" style="padding-right:10px;">${companyDict['company_name']} [${curr_share}%]</div>
                                 <div class="visina5">&nbsp;</div>
                             </div>
                             <div class="col-7">
-                                <div style="background-color:#FACB01; height:4px line-height:4px; margin-top:0.1em; width:${curr_share}%;">&nbsp;</div>
+                                <div class="tender_chart_bar" style="width:${curr_share}%;">&nbsp;</div>
                             </div>
                         </div>
                     %endfor
@@ -414,12 +423,12 @@
                     %for company_id,companyDict in data["wonTendersChartData"]['byTenderNum'].items():
                         <% curr_share = int(round(float(companyDict['share']) * 100, 0)) %>
                         <div class="row no-gutters">
-                            <div class="col-5" style="border-right:2px solid #01488C;">
+                            <div class="col-5 tender_chart_cell_left">
                                 <div class="text-right" style="padding-right:10px;">${companyDict['company_name']} [${companyDict['abssum']} lots]</div>
                                 <div class="visina5">&nbsp;</div>
                             </div>
                             <div class="col-7">
-                                <div style="background-color:#FACB01; height:4px line-height:4px; margin-top:0.1em; width:${curr_share}%;">&nbsp;</div>
+                                <div class="tender_chart_bar" style="width:${curr_share}%;">&nbsp;</div>
                             </div>
                         </div>
                     %endfor
@@ -495,7 +504,7 @@
 
            % if len(data['issuedTenders']) > 0:
                 <div class="row no-gutters">
-                    <div class="col-5 text-right" style="border-right:2px solid #01488C;">
+                    <div class="col-5 text-right tender_chart_cell_left">
                         <a href="javascript:void(0);" id="tenders_issued_value" class="tender_chart_type">Tenders by value</a> &nbsp;
                     </div>
                     <div class="col-7">
@@ -508,12 +517,12 @@
                     %for company_id,companyDict in data["issuedTendersChartData"]['byValue'].items():
                         <% curr_share = int(round(float(companyDict['share']) * 100, 0)) %>
                         <div class="row no-gutters">
-                            <div class="col-5" style="border-right:2px solid #01488C;">
+                            <div class="col-5 tender_chart_cell_left">
                                 <div class="text-right" style="padding-right:10px;">${companyDict['company_name']} [${curr_share}%]</div>
                                 <div class="visina5">&nbsp;</div>
                             </div>
                             <div class="col-7">
-                                <div style="background-color:#FACB01; height:4px line-height:4px; margin-top:0.1em; width:${curr_share}%;">&nbsp;</div>
+                                <div class="tender_chart_bar" style="width:${curr_share}%;">&nbsp;</div>
                             </div>
                         </div>
                     %endfor
@@ -522,12 +531,12 @@
                     %for company_id,companyDict in data["issuedTendersChartData"]['byTenderNum'].items():
                         <% curr_share = int(round(float(companyDict['share']) * 100, 0)) %>
                         <div class="row no-gutters">
-                            <div class="col-5" style="border-right:2px solid #01488C;">
+                            <div class="col-5 tender_chart_cell_left">
                                 <div class="text-right" style="padding-right:10px;">${companyDict['company_name']} [${companyDict['abssum']} lots]</div>
                                 <div class="visina5">&nbsp;</div>
                             </div>
                             <div class="col-7">
-                                <div style="background-color:#FACB01; height:4px line-height:4px; margin-top:0.1em; width:${curr_share}%;">&nbsp;</div>
+                                <div class="tender_chart_bar" style="width:${curr_share}%;">&nbsp;</div>
                             </div>
                         </div>
                     %endfor

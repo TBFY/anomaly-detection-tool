@@ -99,6 +99,8 @@
 				.datum(dataArray) // bind data to the div
 				.call(histogram); // draw chart in div
 		});
+
+		$('.loading_box').hide();
 	}
 </script>
 
@@ -125,6 +127,7 @@
 	<br /><br />
 
 	<div class="container-fluid">
+	    <div class="text-center loading_box"><img src="/images/loading.gif" /></div>
 		<div id="chart-frame" class="chart-frame"></div>
 		<br />
 		<div id="chart-frame-meta"></div>
