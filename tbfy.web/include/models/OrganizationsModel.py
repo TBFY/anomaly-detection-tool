@@ -61,6 +61,7 @@ class OrganizationsModel:
         :return: string, html format
         '''
 
+        company_id = '' if self.getVars.get('id') == None else self.getVars.get('id')
         id_bidder_string = '' if self.getVars.get('id') == None else self.getVars.get('id')
 
         if id_bidder_string == '':
@@ -547,6 +548,261 @@ class OrganizationsModel:
         # look for anomalies
         # look for anomalies
 
+        anomaliesDict = {}
+
+        # find company cpv
+        # find company cpv
+
+        cpv2digits = 0
+        if len(wonTenders) > 0:
+            tmp_lot = list(wonTenders.values())[0]
+            cpv2digits = tmp_lot['tender'][0]['cpv_glavni_2mesti']
+
+        # anomaly 1 :: distributions offersNum
+        # anomaly 1 :: distributions offersNum
+
+        distrFilePath = self.conf.publicTenderDataRoot + 'distributions/offersNum/'
+        distrFileNameNeg = 'si-ministry--neg-deviations.tsv'
+        cmnDistrFileName = 'si-ministry--cmn-distribution.tsv'
+        cmnCPVDistrFileName = 'si-ministry-' + str(cpv2digits) + '-cmn-distribution.tsv'
+        distrNegativeDevs = self.conf.sharedCommon.readDataFile2Dict(distrFilePath + distrFileNameNeg, "\t")
+
+        numOfAnomalies = 0
+        for row in distrNegativeDevs['data']:
+            if row[1] == company_id:
+                anomaliesDict['distribution-offersnum'] = {}
+                anomaliesDict['distribution-offersnum']['anomaly'] = row
+                anomaliesDict['distribution-offersnum']['avgdistr'] = self.conf.sharedCommon.readDataFile2Dict(distrFilePath + cmnDistrFileName, "\t")
+                anomaliesDict['distribution-offersnum']['cpv'] = cpv2digits
+                anomaliesDict['distribution-offersnum']['cpvdistr'] = self.conf.sharedCommon.readDataFile2Dict(distrFilePath + cmnCPVDistrFileName, "\t")
+                numOfAnomalies += 1
+
+        # anomaly 2 :: distributions budget assess
+        # anomaly 2 :: distributions budget assess
+
+        distrBdgFilePath = self.conf.publicTenderDataRoot + 'distributions/budgetAssessment/'
+        distrBdgFileName = 'si-ministry--data-values.tsv'
+        distrDataValues = self.conf.sharedCommon.readDataFile2Dict(distrBdgFilePath + distrBdgFileName, "\t")
+
+        for row in distrDataValues['data']:
+            if row[1] == company_id:
+                if abs(float(row[0])) > 0.5:
+                    anomaliesDict['distribution-bdgasses'] = {}
+                    anomaliesDict['distribution-bdgasses']['anomaly'] = row
+                    numOfAnomalies += 1
+
+        # anomaly 3 :: ratios - revenue per employee
+        # anomaly 3 :: ratios - revenue per employee
+
+        ratioRevFilePath = self.conf.publicTenderDataRoot + 'ratios/revenuePerEmployee/'
+
+        # read negative deviations
+        # read negative deviations
+
+        anomalyFound = 0
+        ratioRevNegFileName = 'si-ministry-neg-deviations.tsv'
+        ratioRevNegDataValues = self.conf.sharedCommon.readDataFile2Dict(ratioRevFilePath + ratioRevNegFileName, "\t")
+        anomalyKey = 'ratio-rev-per-employee-neg'
+        for row in ratioRevNegDataValues['data']:
+            # company as buyer id
+            if row[2] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'buyers' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['buyers'] = []
+                anomaliesDict[anomalyKey]['buyers'].append(row)
+                anomalyFound = 1
+            # company as bidder id
+            if row[3] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'bidders' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['bidders'] = []
+                anomaliesDict[anomalyKey]['bidders'].append(row)
+                anomalyFound = 1
+        numOfAnomalies += anomalyFound
+
+        # read positive deviations
+        # read positive deviations
+
+        anomalyFound = 0
+        ratioRevPosFileName = 'si-ministry-pos-deviations.tsv'
+        ratioRevPosDataValues = self.conf.sharedCommon.readDataFile2Dict(ratioRevFilePath + ratioRevPosFileName, "\t")
+        anomalyKey = 'ratio-rev-per-employee-pos'
+        for row in ratioRevPosDataValues['data']:
+            # company as buyer id
+            if row[2] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'buyers' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['buyers'] = []
+                anomaliesDict[anomalyKey]['buyers'].append(row)
+                anomalyFound = 1
+            # company as bidder id
+            if row[3] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'bidders' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['bidders'] = []
+                anomaliesDict[anomalyKey]['bidders'].append(row)
+                anomalyFound = 1
+        numOfAnomalies += anomalyFound
+
+        # anomaly 4 :: ratios - revenue per employee
+        # anomaly 4 :: ratios - revenue per employee
+
+        ratioRevFilePath = self.conf.publicTenderDataRoot + 'ratios/budgetAssessment/'
+
+        # read negative deviations
+        # read negative deviations
+
+        anomalyFound = 0
+        ratioRevNegFileName = 'si-ministry-neg-deviations.tsv'
+        ratioRevNegDataValues = self.conf.sharedCommon.readDataFile2Dict(ratioRevFilePath + ratioRevNegFileName, "\t")
+        anomalyKey = 'ratio-assessed-final-bdg-neg'
+        for row in ratioRevNegDataValues['data']:
+            # company as buyer id
+            if row[2] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'buyers' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['buyers'] = []
+                anomaliesDict[anomalyKey]['buyers'].append(row)
+                anomalyFound = 1
+            # company as bidder id
+            if row[3] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'bidders' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['bidders'] = []
+                anomaliesDict[anomalyKey]['bidders'].append(row)
+                anomalyFound = 1
+        numOfAnomalies += anomalyFound
+
+        # read positive deviations
+        # read positive deviations
+
+        anomalyFound = 0
+        ratioRevPosFileName = 'si-ministry-pos-deviations.tsv'
+        ratioRevPosDataValues = self.conf.sharedCommon.readDataFile2Dict(ratioRevFilePath + ratioRevPosFileName, "\t")
+        anomalyKey = 'ratio-assessed-final-bdg-pos'
+        for row in ratioRevPosDataValues['data']:
+            # company as buyer id
+            if row[2] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'buyers' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['buyers'] = []
+                anomaliesDict[anomalyKey]['buyers'].append(row)
+                anomalyFound = 1
+            # company as bidder id
+            if row[3] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'bidders' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['bidders'] = []
+                anomaliesDict[anomalyKey]['bidders'].append(row)
+                anomalyFound = 1
+        numOfAnomalies += anomalyFound
+
+        # anomaly 5 :: dependencies
+        # anomaly 5 :: dependencies
+
+        ratioRevFilePath = self.conf.publicTenderDataRoot + 'relations_bb/'
+
+        # dependencies bidder2buyer
+        # dependencies bidder2buyer
+
+        anomalyFound = 0
+        ratioRevNegFileName = 'si-ministry-bidder2buyer.tsv'
+        ratioRevNegDataValues = self.conf.sharedCommon.readDataFile2Dict(ratioRevFilePath + ratioRevNegFileName, "\t")
+        anomalyKey = 'dependency-bidder2buyer'
+        for row in ratioRevNegDataValues['data']:
+            # company as buyer id
+            if row[0] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'buyers' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['buyers'] = []
+                anomaliesDict[anomalyKey]['buyers'].append(row)
+                anomalyFound = 1
+            # company as bidder id
+            if row[1] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'bidders' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['bidders'] = []
+                anomaliesDict[anomalyKey]['bidders'].append(row)
+                anomalyFound = 1
+        numOfAnomalies += anomalyFound
+
+        # dependencies buyer2bidder
+        # dependencies buyer2bidder
+
+        anomalyFound = 0
+        ratioRevNegFileName = 'si-ministry-buyer2bidder.tsv'
+        ratioRevNegDataValues = self.conf.sharedCommon.readDataFile2Dict(ratioRevFilePath + ratioRevNegFileName, "\t")
+        anomalyKey = 'dependency-buyer2bidder'
+        for row in ratioRevNegDataValues['data']:
+            # company as buyer id
+            if row[0] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'buyers' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['buyers'] = []
+                anomaliesDict[anomalyKey]['buyers'].append(row)
+                anomalyFound = 1
+            # company as bidder id
+            if row[1] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'bidders' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['bidders'] = []
+                anomaliesDict[anomalyKey]['bidders'].append(row)
+                anomalyFound = 1
+        numOfAnomalies += anomalyFound
+
+        # dependencies mutual
+        # dependencies mutual
+
+        anomalyFound = 0
+        ratioRevNegFileName = 'si-ministry-mutual.tsv'
+        ratioRevNegDataValues = self.conf.sharedCommon.readDataFile2Dict(ratioRevFilePath + ratioRevNegFileName, "\t")
+        anomalyKey = 'dependency-mutual'
+        for row in ratioRevNegDataValues['data']:
+            # company as buyer id
+            if row[0] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'buyers' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['buyers'] = []
+                anomaliesDict[anomalyKey]['buyers'].append(row)
+                anomalyFound = 1
+            # company as bidder id
+            if row[1] == company_id:
+                if anomalyKey not in anomaliesDict:
+                    anomaliesDict[anomalyKey] = {}
+
+                if 'bidders' not in anomaliesDict[anomalyKey]:
+                    anomaliesDict[anomalyKey]['bidders'] = []
+                anomaliesDict[anomalyKey]['bidders'].append(row)
+                anomalyFound = 1
+        numOfAnomalies += anomalyFound
+
+        # check distributions
         # check distributions
         # check distributions
 
@@ -562,6 +818,9 @@ class OrganizationsModel:
         # won tender data
         dict['wonTenders'] = wonTenders
         dict['wonTendersChartData'] = wonTendersChartData
+        # anomalies data
+        dict['numOfAnomalies'] = numOfAnomalies
+        dict['anomaliesDict'] = anomaliesDict
 
         content = self.conf.Template(filename='templates/orgs_overview_mju.tpl')
         return content.render(data=dict)
