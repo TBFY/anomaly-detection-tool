@@ -117,6 +117,7 @@ All of the three layers of the TBFY anomaly detection tool is run by a python 3.
 - GraphViz 0.13.2
 - jenkspy 0.1.5
 - requests 2.24.0
+- flask 1.1.2
 
 
 # Installation specifications

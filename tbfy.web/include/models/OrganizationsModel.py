@@ -18,13 +18,13 @@ class OrganizationsModel:
         :return: string, html format
         '''
 
-        query_a = "landing" if self.getVars.get('a') == None else self.getVars.get('a')
+        query_a = "search" if self.getVars.get('a') == None else self.getVars.get('a')
         query_a = query_a.lower()
 
         # get content HTML
         # get content HTML
 
-        if(query_a == "landing"):
+        if(query_a == "search"):
             self.contentHtml = self.getSearchOrgView()
         elif(query_a == "source_mju"):
             self.contentHtml = self.getMJUSourceOrgsView()
@@ -43,13 +43,52 @@ class OrganizationsModel:
         # get company id
         # get company id
 
-        id_bidder_string = '' if self.getVars.get('id') == None else self.getVars.get('id')
+        q = '' if self.getVars.get('q') == None else self.getVars.get('q')
+        # extract numbers
+        import re
+        q_nums_array = re.findall('\d+', q)
+        q_nums = ''
+        if len(q_nums_array) > 0:
+            q_nums = ''.join(q_nums_array)
+
+        # set sql vars
+        # set sql vars
+
+        sql = self.conf.cDB.sql
+        cur = self.conf.cDB.db.cursor()
+
+        # check, whether buyer was searched by ID
+        # check, whether buyer was searched by ID
+
+        companyList = {}
+        if len(q_nums):
+            queryBase = "select * from {} WHERE {} = '%s'"
+            queryString = sql.SQL(queryBase).format(
+                # set queried fields
+                sql.Identifier('cst_companies_mju'),
+                sql.Identifier('company_id'))
+            cur.execute(queryString, (int(q_nums),))
+            companyList = self.conf.sharedCommon.returnSqlDataInDictFormat(cur, 'company_id')
+
+        # search by name only if not hits in companyList
+        # search by name only if not hits in companyList
+
+        if len(companyList) == 0:
+            q_name = "%" + q + "%"
+            queryBase = "select * from {} WHERE LOWER({}) LIKE LOWER('" + q_name + "')"
+            queryString = sql.SQL(queryBase).format(
+                # set queried fields
+                sql.Identifier('cst_companies_mju'),
+                sql.Identifier('company_name'))
+            cur.execute(queryString)
+            companyList = self.conf.sharedCommon.returnSqlDataInDictFormat(cur, 'company_id')
 
         # generate html view
         # generate html view
 
         dict = {}
-        dict['id_company'] = id_company_string
+        dict['q'] = q
+        dict['companyList'] = companyList
 
         content = self.conf.Template(filename='templates/orgs_search.tpl')
         return content.render(data=dict)

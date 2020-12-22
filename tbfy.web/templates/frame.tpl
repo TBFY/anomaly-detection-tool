@@ -10,8 +10,9 @@
         <link rel="stylesheet" type="text/css" href="/include/css/bootstrap/bootstrap.min.css"></link>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i&display=swap&subset=latin-ext" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" />
-		<link rel="stylesheet" type="text/css" href="/include/css/tbfy.basic.css?v=3.1"/>
-		<link rel="stylesheet" type="text/css" href="/include/css/tbfy.classes.css?v=3.1"/>
+		<link rel="stylesheet" type="text/css" href="/include/css/tbfy.basic.css?v=3.3"/>
+		<link rel="stylesheet" type="text/css" href="/include/css/tbfy.classes.css?v=3.3"/>
+		<link rel="stylesheet" href="/include/css/elegant_font/HTML_CSS/style.css" />
 
 
         <script type="text/javascript" src="/include/javascript/bootstrap/bootstrap.min.js"></script>
@@ -23,9 +24,46 @@
     </head>
 
     <body>
+        <% svalue = data['searchString'] if data['q'] == '' else data['q'] %>
+
         <script type="text/javascript">
             $(document).ready(function()
             {
+                $('.search_content').click(function()
+                {
+                    if($('.search_bar_disply').is(":visible"))
+                    {
+                        $('.search_bar_disply').hide(300);
+                    }
+                    else
+                    {
+                        $('.search_bar_disply').show(300);
+                    }
+                });
+
+                $('.search_field').focus(function()
+                {
+                    var tmp_cnt = $('.search_field').val();
+                    if(tmp_cnt == '${data["searchString"]}')
+                    {
+                        $('.search_field').removeClass('search_text');
+                        $('.search_field').val('');
+                    }
+                });
+                $('.search_field').blur(function()
+                {
+                    var tmp_cnt = $('.search_field').val();
+                    if(tmp_cnt == '')
+                    {
+                        $('.search_field').addClass('search_text');
+                        $('.search_field').val('${data["searchString"]}');
+                    }
+                });
+
+                if('${data["q"]}' != '')
+                {
+                    $('.search_field').removeClass('search_text');
+                }
             });
         </script>
 
@@ -37,12 +75,22 @@
                 </div>
                 <div class="col-md-9 col-sm-12 switch_menu_box">
                         <div class="row no-gutters w-100">
-                            <div class="col-md-7 col-6 switch_menu_btn_align">
+                            <div class="col-md-6 col-5 switch_menu_btn_align">
                                 <a href="?m=transactions" id="menu_link_transactions" class="switch_menu switch_menu${'_active' if data['query_m'] == 'transactions' else '_passive'}">Transactions</a>
                             </div>
-                            <div class="col-md-5 col-6 switch_menu_btn_align">
+                            <div class="col-md-5 col-6 switch_menu_btn_align" style="position:relative; left:-20px;">
                                 <a href="?m=tenders" id="menu_link_tenders" class="switch_menu switch_menu${'_active' if data['query_m'] == 'tenders' else '_passive'}">Tenders</a>
                             </div>
+                            <div class="col-md-1 col-1 switch_menu_btn_align_icon search_content">
+                                <span class="icon_search text_180 pointer"></span>
+                            </div>
+                            <div  class="col-md-8 col-sm-12 offset-md-4 search_bar_disply" style="display:none;"><div class="search_bar">
+                                <form method="get" action="">
+                                    <input type="hidden" name="m" value="orgs" />
+                                    <input type="hidden" name="a" value="search" />
+                                    <input type="text" name="q" value="${svalue}" class="search_field search_text" style="width:100%;" />
+                                </form>
+                            </div></div>
                         </div>
                     <div class="clearfix"></div>
                 </div>

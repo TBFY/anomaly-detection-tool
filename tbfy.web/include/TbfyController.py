@@ -50,6 +50,11 @@ class TbfyController:
         :return: fully generated html page
         '''
 
+        searchString = 'browse bidders or buyers by name, id'
+        q = '' if self.getVars.get('q') == None else self.getVars.get('q')
+        if q == searchString:
+            q = ''
+
         dict = {}
         if self.getVars.get('m') == 'tenders':
             dict['query_m'] = 'tenders'
@@ -57,6 +62,10 @@ class TbfyController:
             dict['query_m'] = 'transactions'
         else:
             dict['query_m'] = ''
+
+
+        dict['searchString'] = searchString
+        dict['q'] = q
 
         fullHtml = self.confObj.Template(filename='templates/frame.tpl')
         return fullHtml.render(contentHtml=contentHTML,data=dict)

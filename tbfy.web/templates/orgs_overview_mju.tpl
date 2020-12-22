@@ -341,6 +341,7 @@
                     </div>
                 % else:
                     No company data available.
+                    <br /><br /><br />
                 % endif
                 <div class="col-sm-3 col-6">
                     <div  class="row no-gutters">
@@ -370,6 +371,7 @@
             </div>
         % else:
             No company data available.
+            <br /><br /><br />
         % endif
      </div>
 
@@ -501,6 +503,7 @@
             % else:
                 Company hasn't won any tenders.
             % endif
+            <br /><br />
 	    </div>
 	    <div id="tenders_issued_content" class="tab_content" style="display:none;">
 	        <!-- tenders issued content -->
@@ -703,6 +706,7 @@
                                     % endfor
                                     </ul>
                                 % endif
+                                <br />
 
                             % elif anomalyType == 'ratio-rev-per-employee-neg':
                                 ${data['companyProfileDict']['ponudnikorganizacija']} appears to have an <b>unusually LOW</b> tender-related revenues regarding its employee size.
